@@ -1,5 +1,6 @@
 package com.example.beep.di
 
+import com.example.beep.data.UserApi
 import com.example.beep.data.api.RetrofitApi
 import com.example.beep.util.BASE_URL
 import com.google.gson.Gson
@@ -38,5 +39,12 @@ object RemoteDataModule {
     @Singleton
     fun provideRetrofitApi(@Named("retrofit") retrofit: Retrofit): RetrofitApi {
         return retrofit.create(RetrofitApi::class.java)
+    }
+
+    // UserApi DI
+    @Provides
+    @Singleton
+    fun UserApi(@Named("retrofit") retrofit: Retrofit): UserApi {
+        return retrofit.create(UserApi::class.java)
     }
 }
