@@ -88,6 +88,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-messaging-ktx'
     implementation "com.google.accompanist:accompanist-permissions:$accompanist_version"
+    // DataStore
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
 
 }
 

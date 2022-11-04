@@ -9,26 +9,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.example.beep.ui.navigation.NavGraph
 import kotlinx.coroutines.launch
-import com.example.beep.R
-
-val dunggeunmoFont = FontFamily(
-    Font(R.font.dunggeunmo)
-)
-
-val labdigitalFont = FontFamily(
-    Font(R.font.labdigital)
-)
-
-val lanapixelFont = FontFamily(
-    Font(R.font.lanapixel)
-)
-
 
 @Composable
 fun LoginMainScreen() {
@@ -69,7 +53,7 @@ fun login_main() {
             }){
                 Text(text = "로그인")
             }
-            
+
             Button(onClick = {
                 coroutineScope.launch {
                     vm.signOut()
@@ -77,12 +61,6 @@ fun login_main() {
             }) {
                 Text(text = "로그아웃")
             }
-
-            Text("지금 생각나는 사람은?", fontFamily = pressFont)
-            Text("Text", fontFamily = pressFont)
-            Text("Text 텍스트 01234", fontFamily = dunggeunmoFont)
-            Text("Text 텍스트 01234", fontFamily = labdigitalFont)
-            Text("Text 텍스트 01234", fontFamily = lanapixelFont)
             
             Button(onClick = { }, modifier = Modifier.fillMaxWidth()) {
                 Text(text = "로그인")
