@@ -16,7 +16,6 @@ import com.example.beep.ui.mypage.introduce.UiState
 @Composable
 fun Bbibbi(
     homeViewModel: HomeViewModel = viewModel(),
-    presetViewModel: PresetViewModel = viewModel(),
     keyboardViewModel: KeyboardViewModel = viewModel()
 ) {
 
