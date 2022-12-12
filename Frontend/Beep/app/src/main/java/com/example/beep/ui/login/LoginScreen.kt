@@ -35,6 +35,7 @@ import com.example.beep.di.MainApplication
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalLayoutApi::class)
 @Composable
+/** 로그인 화면 */
 fun LoginScreen(
     navController: NavController,
 ) {
