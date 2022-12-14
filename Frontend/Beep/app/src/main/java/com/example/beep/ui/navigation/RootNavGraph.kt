@@ -23,7 +23,7 @@ import com.example.beep.ui.login.*
 fun RootNavGraph(viewModel: UserViewModel = viewModel()) {
     val navController = rememberNavController()
     val token = MainApplication.sharedPreferencesUtil.getToken()
-    var isLoggedDestination = "login_graph"
+    var isLoggedDestination = "beep_graph"
 
     if (token != null) {
         if (token.isNotBlank()) {

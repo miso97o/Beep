@@ -60,7 +60,11 @@ fun MainButtonScreen(navController: NavController) {
                 verticalArrangement = Arrangement.Bottom,
             ) {
                 Button(
-                    onClick = { navController.navigate("login_graph") },
+                    onClick = { navController.navigate("login_graph") {
+                        popUpTo("login_main_graph") {
+                            inclusive = true
+                        }
+                    } },
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(40.dp)

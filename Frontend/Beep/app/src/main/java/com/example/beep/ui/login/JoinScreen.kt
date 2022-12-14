@@ -37,7 +37,11 @@ fun JoinScreen(navController: NavController) {
         Log.d("launchEffect 실행", "$loginState")
         if (token != null) {
             if (token.isNotBlank()) {
-                navController.navigate("beep_graph")
+                navController.navigate("beep_graph") {
+                    popUpTo("login_graph") {
+                        inclusive = true
+                    }
+                }
             }
         }
     }

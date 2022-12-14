@@ -62,7 +62,11 @@ fun BeepApp() {
     LaunchedEffect(loginState.isUserLoggedIn) {
         if (token != null) {
             if (token.isEmpty()) {
-                navController.navigate("login_main_graph")
+                navController.navigate("login_main_graph") {
+                    popUpTo("home") {
+                        inclusive = true
+                    }
+                }
             }
         }
     }
@@ -98,7 +102,12 @@ fun BeepApp() {
                 ),
                 navController = navController,
                 onItemClick = {
-                    navController.navigate(it.route)
+                    val backStackEntry = navController.currentBackStackEntry
+                    if (backStackEntry?.destination?.route != it.route) {
+                        navController.navigate(it.route) {
+                            popUpTo("home")
+                        }
+                    }
                 },
             )
         }
@@ -164,7 +173,11 @@ fun BeepAppBar(
                         .background(color = BLUE400.copy(0.0F))
                         .clickable {
                             if(checkState == "dictionaryList") {
-                                navController.navigate("home")
+                                navController.navigate("home") {
+                                    popUpTo("home") {
+                                        inclusive = true
+                                    }
+                                }
                             } else {
                                 navController.navigate("dictionaryList")
                             }
